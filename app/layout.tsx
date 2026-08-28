@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// @ts-expect-error - Next.js handles CSS imports via its bundler config.
 import "./globals.css";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import { Header } from "@/components/Header";
