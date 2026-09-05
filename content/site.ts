@@ -1,14 +1,8 @@
 /**
- * SITE CONTENT — Goshen Home Healthcare.
- *
- * Themed from the same template as LotusCare: this file + the @theme palette
- * in globals.css are the only things that change between the two sites.
- *
- * IMPORTANT — confirm with client before launch:
- *  - Phone/address/email below are placeholders. The old template site showed a
- *    fake number ("123 456 78 90") and a New York address that isn't Goshen's.
- *    Goshen operates in ILLINOIS (per the "Illinois State Nurse Practice Act"
- *    reference in their services). Get the real Chicago/IL NAP.
+ * SITE CONTENT - Goshen Home Healthcare.
+ * Themed from the same template as LotusCare (this file + the @theme palette).
+ * NOTE: copy avoids em-dashes on purpose (they were being stripped on paste);
+ * uses colons/commas instead so nothing breaks.
  */
 
 export const site = {
@@ -16,22 +10,24 @@ export const site = {
   legalName: "Goshen Home Healthcare",
   tagline: "Be in health.",
   description:
-    "Goshen Home Healthcare is a dedicated team of compassionate professionals delivering high-quality, personalized home healthcare across Illinois — for all ages, 24/7.",
+    "Goshen Home Healthcare is a dedicated team of compassionate professionals delivering high-quality, personalized home healthcare across Illinois, for all ages, 24/7.",
 
-  // --- Contact / NAP — TODO: CONFIRM WITH CLIENT (placeholders below) ---
-  phone: "(000) 000-0000",
-  phoneHref: "tel:+10000000000",
+  // Confirmed by client
+  phone: "(630) 634-2833",
+  phoneHref: "tel:+16306342833",
   email: "info@goshenhhc.com",
   address: {
-    line1: "TODO — street address",
-    city: "TODO — city",
+    line1: "5901 N Cicero Ave, STE 107",
+    city: "Chicago",
     state: "IL",
-    zip: "TODO",
+    zip: "60646",
   },
-  hours: "Care provided 24/7",
+  // Office/phone hours. (Care itself is available 24/7 - see serviceNote below.)
+  hours: "Mon-Fri, 8:30 AM - 5:00 PM",
+  careAvailability: "Care available 24/7",
 
   socials: {
-    // Old template linked Facebook / Twitter / Instagram / YouTube — TODO: real handles
+    // Client hasn't provided handles yet - leave empty; the footer hides them.
     facebook: "",
     instagram: "",
     linkedin: "",
@@ -43,15 +39,13 @@ export const site = {
   },
 } as const;
 
-// Founder — real, from the old site (drop the template's "CEO of evermed")
 export const founder = {
   name: "Olivia Michelle",
   role: "Founder & CEO",
   statement:
-    "With a focus on excellence, integrity, and compassion, we serve individuals of all ages — making sure they get the support they need to live safely and comfortably at home.",
+    "With a focus on excellence, integrity, and compassion, we serve individuals of all ages, making sure they get the support they need to live safely and comfortably at home.",
 } as const;
 
-// The old site's real "who we are" copy
 export const about = {
   lede: "At Goshen Home Healthcare, we are a dedicated team of compassionate professionals committed to delivering high-quality, personalized home healthcare services.",
   body: "Whether it's help with daily activities, skilled nursing, or specialized care, our caregivers are trained to provide exceptional service tailored to each client's unique needs.",
@@ -64,21 +58,20 @@ export type Service = {
   blurb: string;
 };
 
-// The real 8 services from the old site (lorem ipsum replaced with concrete copy)
 export const services: Service[] = [
   {
     slug: "private-duty-nursing",
     title: "Private Duty Nursing",
     group: "Skilled Nursing",
     blurb:
-      "One-to-one skilled nursing at home — ongoing clinical care from a licensed nurse dedicated to your loved one.",
+      "One-to-one skilled nursing at home, from a licensed nurse dedicated to your loved one.",
   },
   {
     slug: "medication-management",
     title: "Medication Management",
     group: "Skilled Nursing",
     blurb:
-      "The right medications, taken correctly and on time — set up, monitored, and coordinated with your physicians.",
+      "The right medications, taken correctly and on time, coordinated with your physicians.",
   },
   {
     slug: "patient-family-education",
@@ -106,7 +99,7 @@ export const services: Service[] = [
     title: "Personal Care Services",
     group: "Personal Care",
     blurb:
-      "Respectful help with bathing, dressing, grooming and mobility — daily support with dignity.",
+      "Respectful help with bathing, dressing, grooming and mobility: daily support with dignity.",
   },
   {
     slug: "home-making",
@@ -120,22 +113,19 @@ export const services: Service[] = [
     title: "Companionship / Sitter Services",
     group: "Personal Care",
     blurb:
-      "A friendly, dependable presence — company, conversation, and a watchful eye when family can't be there.",
+      "A friendly, dependable presence: company, conversation, and a watchful eye when family can't be there.",
   },
 ];
 
-// Real closing note from the old services section
 export const serviceNote =
-  "…and other services allowable under the Illinois State Nurse Practice Act. We provide care 24/7.";
+  "...and other services allowable under the Illinois State Nurse Practice Act. We provide care 24/7.";
 
-// Careers — mirrors the LotusCare template (Goshen trains caregivers too).
-// TODO: confirm Goshen actually recruits before publishing this page.
 export const careerTracks = [
   {
     id: "caregiving",
     title: "Caregiving",
     blurb:
-      "Support clients with everyday care — on a schedule that fits your life.",
+      "Support clients with everyday care, on a schedule that fits your life.",
   },
   {
     id: "nursing",
@@ -146,9 +136,15 @@ export const careerTracks = [
   {
     id: "administrative",
     title: "Administrative",
-    blurb: "Keep care running smoothly — scheduling, coordination and support.",
+    blurb: "Keep care running smoothly: scheduling, coordination and support.",
   },
 ] as const;
+
+export const careerLinks = {
+  // Indeed page exists but no active post yet - add the /jobs URL when they post a role.
+  indeed: "",
+  linkedin: "",
+} as const;
 
 export const positionOptions = careerTracks.map((t) => t.title);
 export const employmentTypes = ["Full-time", "Part-time", "Per diem"] as const;
