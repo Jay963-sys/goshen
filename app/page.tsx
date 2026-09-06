@@ -5,8 +5,6 @@ import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { site, services, about, serviceNote } from "@/content/site";
 
-const blob = { borderRadius: "42% 58% 57% 43% / 47% 44% 56% 53%" } as const;
-
 const trust = [
   {
     n: "01",
@@ -16,207 +14,360 @@ const trust = [
   {
     n: "02",
     title: "Around the clock",
-    text: "We provide care 24/7, so support is there whenever your family needs it.",
+    text: "Support is available 24/7, whenever your family needs it.",
   },
   {
     n: "03",
     title: "Licensed & compliant",
-    text: "Every service allowable under the Illinois State Nurse Practice Act.",
+    text: "Care delivered within the requirements of the Illinois State Nurse Practice Act.",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* ---------------------------------------------------------- Hero */}
-      <section className="relative overflow-hidden py-14 lg:py-20">
-        <Container className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <div>
-            <Reveal>
-              <p className="eyebrow">Home healthcare &middot; Illinois</p>
-            </Reveal>
-            <Reveal delay={80}>
-              <h1 className="mt-5 font-display text-[clamp(2.6rem,6vw,4.6rem)] font-bold leading-[1.02] tracking-tight text-pine-900">
-                Care for <span className="text-blush-600">every age</span>, any
-                hour.
-              </h1>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="mt-6 max-w-lg text-[1.2rem] leading-relaxed text-ink-700">
-                From children to seniors, Goshen delivers skilled and personal
-                home care across Illinois, tailored to each person and available
-                around the clock.
-              </p>
-            </Reveal>
-            <Reveal delay={240}>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button href={site.primaryCta.href} size="lg">
-                  {site.primaryCta.label}
-                </Button>
-                <a
-                  href={site.phoneHref}
-                  className="link-underline text-lg font-semibold text-pine-800"
-                >
-                  or call {site.phone}
-                </a>
-              </div>
-            </Reveal>
-          </div>
+      {/* ============================================================
+          HERO
+      ============================================================ */}
+      <section className="home-hero relative overflow-hidden">
+        <Container>
+          <div className="home-hero-grid">
+            {/* Hero copy */}
+            <div className="home-hero-copy">
+              <Reveal>
+                <p className="eyebrow">Home healthcare · Illinois</p>
+              </Reveal>
 
-          {/* Circular hero visual: coral blob behind, photo in circle, 24/7 badge */}
-          <Reveal delay={180}>
-            <div className="relative mx-auto aspect-square w-[min(420px,90%)]">
-              <div
-                aria-hidden
-                className="absolute right-2 top-[8%] z-0 aspect-square w-4/5 bg-blush-500 opacity-90"
-                style={blob}
-              />
-              <div className="relative z-10 aspect-square w-full overflow-hidden rounded-full shadow-[0_30px_60px_-30px_rgba(14,63,58,0.4)]">
-                <Image
-                  src="/3.jpg"
-                  alt="A Goshen caregiver with a client at home"
-                  fill
-                  priority
-                  sizes="(min-width: 960px) 420px, 90vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="absolute bottom-[12%] left-[2%] z-20 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-pine-900 text-white shadow-[0_16px_30px_-14px_rgba(0,0,0,0.5)]">
-                <b className="font-display text-2xl leading-none">24/7</b>
-                <small className="mt-0.5 text-[0.6rem] tracking-[0.12em] text-sage-200">
-                  ALWAYS ON
-                </small>
-              </div>
+              <Reveal delay={80}>
+                <h1 className="home-hero-title">
+                  Care for <span className="hero-word">every age</span>
+                  <br className="hidden sm:block" />{" "}
+                  <span className="hero-title-light">any hour.</span>
+                </h1>
+              </Reveal>
+
+              <Reveal delay={160}>
+                <p className="home-hero-lede">
+                  From children to seniors, Goshen delivers skilled and personal
+                  home care across Illinois — tailored to each person and
+                  available around the clock.
+                </p>
+              </Reveal>
+
+              <Reveal delay={240}>
+                <div className="home-hero-actions">
+                  <Button href={site.primaryCta.href} size="lg">
+                    {site.primaryCta.label}
+                  </Button>
+
+                  <a
+                    href={site.phoneHref}
+                    className="hero-phone link-underline"
+                  >
+                    <span>or call</span> {site.phone}
+                  </a>
+                </div>
+              </Reveal>
+
+              <Reveal delay={320}>
+                <div className="hero-reassurance">
+                  <span className="hero-reassurance-line" />
+                  <span>
+                    Compassionate care, delivered in the comfort of home.
+                  </span>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
-        </Container>
-      </section>
 
-      {/* ------------------------------------------------------ Trust band */}
-      <section className="bg-pine-900 text-white">
-        <Container className="grid gap-8 py-12 md:grid-cols-3 md:gap-10 lg:py-14">
-          {trust.map((t, i) => (
-            <Reveal key={t.n} delay={i * 80}>
-              <div className="flex items-start gap-4">
-                <span className="font-display text-[1.6rem] font-bold leading-none text-blush-500">
-                  {t.n}
-                </span>
-                <div>
-                  <h3 className="font-display text-[1.15rem] font-bold text-white">
-                    {t.title}
-                  </h3>
-                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-sage-200">
-                    {t.text}
-                  </p>
+            {/* Hero visual */}
+            <Reveal delay={160}>
+              <div className="home-hero-visual">
+                <div className="hero-photo-frame">
+                  <Image
+                    src="/1.jpg"
+                    alt="A Goshen caregiver with a client at home"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 46vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="hero-photo-label">
+                  <span className="hero-photo-label-number">24/7</span>
+                  <span className="hero-photo-label-text">
+                    Care when you need it
+                  </span>
+                </div>
+
+                <div className="hero-photo-caption">
+                  <span>Goshen Home Healthcare</span>
                 </div>
               </div>
             </Reveal>
-          ))}
+          </div>
         </Container>
       </section>
 
-      {/* ------------------------------------------------------ Who we are */}
-      <section className="py-20 lg:py-24">
-        <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal>
-            <div
-              className="photo-warm relative aspect-[5/6] w-full overflow-hidden"
-              style={{
-                borderRadius: "68% 42% 55% 65% / 52% 56% 44% 48%",
-                objectPosition: "left 10%",
-              }}
-            >
-              <Image
-                src="/k.jpeg"
-                alt="Goshen caregivers supporting a family"
-                fill
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="eyebrow">Who we are</p>
-            <h2 className="mt-4 font-display text-[clamp(1.9rem,3.4vw,2.8rem)] font-bold leading-tight tracking-tight text-pine-900">
-              Care shaped around each person, at every age.
-            </h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-ink-700">
-              {about.lede}
-            </p>
-            <p className="mt-4 max-w-xl text-ink-700">{about.body}</p>
-            <p className="mt-6 max-w-xl border-l-2 border-blush-500 pl-4 text-ink-700">
-              {about.promise}
-            </p>
-          </Reveal>
-        </Container>
-      </section>
-
-      {/* ------------------------------------------------------ Services grid */}
-      <section className="bg-cream py-20 lg:py-24">
+      {/* ============================================================
+          INTRODUCTION / BRAND STATEMENT
+      ============================================================ */}
+      <section className="statement-section">
         <Container>
-          <Reveal className="mb-10 max-w-2xl">
-            <p className="eyebrow">What we offer</p>
-            <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-tight tracking-tight text-pine-900">
-              Skilled nursing and everyday care, in one place.
-            </h2>
-          </Reveal>
+          <div className="statement-grid">
+            <Reveal>
+              <p className="eyebrow">A more personal approach</p>
+            </Reveal>
 
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-pine-900/12 ring-1 ring-pine-900/12 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s, i) => (
-              <Reveal key={s.slug}>
-                <Link
-                  href={`/services#${s.slug}`}
-                  className="flex h-full flex-col bg-ivory p-6 transition-colors hover:bg-surface"
-                >
-                  <span className="font-display text-[0.85rem] font-bold text-blush-600">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-2 font-display text-[1.1rem] font-bold leading-tight text-pine-900">
-                    {s.title}
-                  </h3>
-                  <p className="mt-2 text-[0.9rem] leading-relaxed text-ink-500">
-                    {s.blurb}
+            <Reveal delay={100}>
+              <div>
+                <h2 className="statement-heading">
+                  The right care should feel <span>personal.</span>
+                </h2>
+
+                <div className="statement-bottom">
+                  <p>
+                    Every person has different needs, routines and
+                    circumstances. We believe quality home healthcare starts
+                    with understanding the individual — not simply the
+                    condition.
                   </p>
+
+                  <Link href="/about" className="statement-link link-underline">
+                    More about Goshen
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* ============================================================
+          TRUST / REASSURANCE
+      ============================================================ */}
+      <section className="trust-section">
+        <Container>
+          <div className="trust-intro">
+            <Reveal>
+              <p className="eyebrow eyebrow-light">Why families choose us</p>
+            </Reveal>
+
+            <Reveal delay={80}>
+              <h2>
+                Care that is dependable,
+                <br className="hidden sm:block" /> personal and always there.
+              </h2>
+            </Reveal>
+          </div>
+
+          <div className="trust-list">
+            {trust.map((item, index) => (
+              <Reveal key={item.n} delay={index * 90}>
+                <div className="trust-item">
+                  <span className="trust-number">{item.n}</span>
+
+                  <div className="trust-content">
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+
+                  <span className="trust-rule" />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ============================================================
+          WHO WE ARE
+      ============================================================ */}
+      <section className="about-section">
+        <Container>
+          <div className="about-grid">
+            <Reveal>
+              <div className="about-image-wrap">
+                <div className="about-image">
+                  <Image
+                    src="/9.jpg"
+                    alt="Goshen caregivers supporting a family"
+                    fill
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="about-image-note">
+                  <span>Care built around people</span>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <div className="about-copy">
+                <p className="eyebrow">Who we are</p>
+
+                <h2>Care shaped around each person, at every age.</h2>
+
+                <p className="about-lede">{about.lede}</p>
+
+                <p className="about-body">{about.body}</p>
+
+                <div className="about-promise">
+                  <span className="about-promise-mark" />
+                  <p>{about.promise}</p>
+                </div>
+
+                <Link href="/about" className="about-link link-underline">
+                  Discover Goshen
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* ============================================================
+          SERVICES
+      ============================================================ */}
+      <section className="services-section">
+        <Container>
+          <div className="services-heading">
+            <Reveal>
+              <p className="eyebrow">What we offer</p>
+            </Reveal>
+
+            <Reveal delay={80}>
+              <h2>
+                Skilled care.
+                <br />
+                Everyday support.
+              </h2>
+            </Reveal>
+
+            <Reveal delay={140}>
+              <p>
+                From skilled nursing to everyday personal care, our services are
+                designed to support individuals and families at home.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="service-list">
+            {services.map((service, index) => (
+              <Reveal key={service.slug} delay={index * 50}>
+                <Link
+                  href={`/services#${service.slug}`}
+                  className="service-row"
+                >
+                  <span className="service-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="service-main">
+                    <span className="service-title">{service.title}</span>
+
+                    <span className="service-description">{service.blurb}</span>
+                  </span>
+
+                  <span className="service-arrow" aria-hidden>
+                    →
+                  </span>
                 </Link>
               </Reveal>
             ))}
           </div>
 
           <Reveal>
-            <p className="mt-8 text-center text-[0.95rem] text-ink-500">
-              <b className="text-pine-700">Care, around the clock.</b>{" "}
-              {serviceNote}
-            </p>
+            <div className="services-note">
+              <span className="services-note-line" />
+              <p>
+                <strong>Care, around the clock.</strong> {serviceNote}
+              </p>
+            </div>
           </Reveal>
         </Container>
       </section>
 
-      {/* ------------------------------------------------------ CTA */}
-      <section className="pt-20">
-        <div className="relative overflow-hidden rounded-t-[2.5rem] bg-pine-800 py-20 text-center text-white">
-          <Container>
+      {/* ============================================================
+          CLOSING IMAGE / STATEMENT
+      ============================================================ */}
+      <section className="closing-section">
+        <Container>
+          <div className="closing-grid">
             <Reveal>
-              <p className="eyebrow text-blush-200">Get started</p>
-              <h2 className="mt-3 font-display text-[clamp(1.9rem,4vw,2.8rem)] font-bold tracking-tight text-white">
-                Call us today for a free assessment!
-              </h2>
-              <p className="mx-auto mt-4 max-w-xl text-lg text-sage-200">
-                Tell us about your family&apos;s needs and we&apos;ll build a
-                care plan around them, for any age, any time.
-              </p>
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="/contact" size="lg" variant="onDark">
-                  Contact us
-                </Button>
-                <a
-                  href={site.phoneHref}
-                  className="text-lg font-semibold text-white/90 hover:text-white"
-                >
-                  or call {site.phone}
-                </a>
+              <div className="closing-image">
+                <Image
+                  src="/10.jpg"
+                  alt="Goshen home healthcare support"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover"
+                />
               </div>
             </Reveal>
+
+            <Reveal delay={120}>
+              <div className="closing-copy">
+                <p className="eyebrow">Here when it matters</p>
+
+                <h2>Because good care is about more than treatment.</h2>
+
+                <p>
+                  It is about comfort, dignity, familiarity and having someone
+                  there when you need them.
+                </p>
+
+                <Link href="/contact" className="closing-link link-underline">
+                  Talk with Goshen
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* ============================================================
+          CTA
+      ============================================================ */}
+      <section className="cta-section">
+        <div className="cta-shell">
+          <Container>
+            <div className="cta-content">
+              <Reveal>
+                <p className="eyebrow eyebrow-light">Get started</p>
+              </Reveal>
+
+              <Reveal delay={80}>
+                <h2>
+                  Let&apos;s find the right
+                  <br className="hidden sm:block" /> care for your family.
+                </h2>
+              </Reveal>
+
+              <Reveal delay={140}>
+                <p>
+                  Tell us about your family&apos;s needs and we&apos;ll help
+                  build a care plan around them — for any age, any time.
+                </p>
+              </Reveal>
+
+              <Reveal delay={200}>
+                <div className="cta-actions">
+                  <Button href="/contact" size="lg" variant="onDark">
+                    Contact us
+                  </Button>
+
+                  <a href={site.phoneHref} className="cta-phone">
+                    or call {site.phone}
+                  </a>
+                </div>
+              </Reveal>
+            </div>
           </Container>
+
+          <div className="cta-decoration" aria-hidden />
         </div>
       </section>
     </>

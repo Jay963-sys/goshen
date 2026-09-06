@@ -50,7 +50,7 @@ export default function AboutPage() {
               style={{ borderRadius: "58% 42% 45% 55% / 52% 56% 44% 48%" }}
             >
               <Image
-                src="/5.jpg"
+                src="/11.jpg"
                 alt="Goshen caregivers with clients at home"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"

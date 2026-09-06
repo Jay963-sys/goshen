@@ -31,7 +31,7 @@ export default function ContactPage() {
             <div className="rounded-2xl bg-sage-50 p-8 ring-1 ring-pine-900/8">
               <div className="photo-warm relative mb-6 aspect-[16/9] w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/b.jpeg"
+                  src="/13.jpg"
                   alt="The Goshen team"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"

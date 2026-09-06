@@ -75,7 +75,7 @@ export default function ServicesPage() {
                 style={{ borderRadius: "58% 42% 45% 55% / 52% 56% 44% 48%" }}
               >
                 <Image
-                  src="/6.jpeg"
+                  src="/12.jpg"
                   alt="A Goshen nurse providing clinical care at home"
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
