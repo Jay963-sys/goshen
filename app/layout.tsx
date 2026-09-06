@@ -4,6 +4,7 @@ import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
+import { ChatWidget } from "@/components/ChatWidget";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -69,6 +70,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <ChatWidget />
       </body>
     </html>
   );
