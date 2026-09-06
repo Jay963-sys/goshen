@@ -1,8 +1,7 @@
 /**
  * SITE CONTENT - Goshen Home Healthcare.
  * Themed from the same template as LotusCare (this file + the @theme palette).
- * NOTE: copy avoids em-dashes on purpose (they were being stripped on paste);
- * uses colons/commas instead so nothing breaks.
+ * NOTE: copy avoids em-dashes on purpose (they were being stripped on paste).
  */
 
 export const site = {
@@ -22,33 +21,20 @@ export const site = {
     state: "IL",
     zip: "60646",
   },
-  // Office/phone hours. (Care itself is available 24/7 - see serviceNote below.)
   hours: "Mon-Fri, 8:30 AM - 5:00 PM",
   careAvailability: "Care available 24/7",
 
-  socials: {
-    // Client hasn't provided handles yet - leave empty; the footer hides them.
-    facebook: "",
-    instagram: "",
-    linkedin: "",
-  },
+  socials: { facebook: "", instagram: "", linkedin: "" },
 
-  primaryCta: {
-    label: "Request a free assessment",
-    href: "/contact",
-  },
+  primaryCta: { label: "Request a free assessment", href: "/contact" },
 } as const;
 
-export const founder = {
-  name: "Olivia Michelle",
-  role: "Founder & CEO",
-  statement:
-    "With a focus on excellence, integrity, and compassion, we serve individuals of all ages, making sure they get the support they need to live safely and comfortably at home.",
-} as const;
-
+// Real company copy. (No founder/CEO section: that attribution was template placeholder.)
 export const about = {
   lede: "At Goshen Home Healthcare, we are a dedicated team of compassionate professionals committed to delivering high-quality, personalized home healthcare services.",
   body: "Whether it's help with daily activities, skilled nursing, or specialized care, our caregivers are trained to provide exceptional service tailored to each client's unique needs.",
+  promise:
+    "With a focus on excellence, integrity, and compassion, we serve individuals of all ages, making sure they get the support they need to live safely and comfortably at home.",
 } as const;
 
 export type Service = {
@@ -78,7 +64,7 @@ export const services: Service[] = [
     title: "Patient / Family Education",
     group: "Skilled Nursing",
     blurb:
-      "Teaching patients and families to manage a condition confidently at home, so no one is left to figure it out alone.",
+      "Teaching patients and families to manage a condition confidently at home.",
   },
   {
     slug: "surgical-after-care",
@@ -140,11 +126,7 @@ export const careerTracks = [
   },
 ] as const;
 
-export const careerLinks = {
-  // Indeed page exists but no active post yet - add the /jobs URL when they post a role.
-  indeed: "",
-  linkedin: "",
-} as const;
+export const careerLinks = { indeed: "", linkedin: "" } as const;
 
 export const positionOptions = careerTracks.map((t) => t.title);
 export const employmentTypes = ["Full-time", "Part-time", "Per diem"] as const;

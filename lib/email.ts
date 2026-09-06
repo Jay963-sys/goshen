@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 const apiKey = process.env.RESEND_API_KEY;
 const resend = apiKey ? new Resend(apiKey) : null;
 
-const FROM = process.env.FROM_EMAIL ?? `${site.name} <onboarding@resend.dev>`;
+const FROM = process.env.FROM_EMAIL ?? `${site.name} <${site.email}>`;
 const INBOX = process.env.LEADS_INBOX ?? site.email;
 
 type Field = { label: string; value: string };
@@ -23,7 +23,10 @@ function toHtml(title: string, fields: Field[]): string {
 }
 
 function escape(s: string): string {
-  return s.replace(/[<>&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" })[c]!);
+  return s.replace(
+    /[<>&]/g,
+    (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" })[c]!,
+  );
 }
 
 export async function sendLeadEmail(
@@ -32,7 +35,10 @@ export async function sendLeadEmail(
   replyTo?: string,
 ): Promise<{ sent: boolean }> {
   if (!resend) {
-    console.warn("[email] RESEND_API_KEY not set — skipping send. Payload:", fields);
+    console.warn(
+      "[email] RESEND_API_KEY not set — skipping send. Payload:",
+      fields,
+    );
     return { sent: false };
   }
   await resend.emails.send({

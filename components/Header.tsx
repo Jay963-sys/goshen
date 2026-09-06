@@ -177,7 +177,7 @@ export function Header() {
         </Container>
       </header>
 
-      {/* Full-bleed mobile overlay — kept OUTSIDE <header> so the header's
+      {/* Full-bleed mobile overlay - kept OUTSIDE <header> so the header's
           backdrop-filter doesn't trap this fixed element. */}
       <div
         id="mobile-nav"

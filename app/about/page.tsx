@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-// import Image from "next/image"; // enable with real Goshen photos
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
 import { PageHero, AssessmentBand } from "@/components/Sections";
 import { LinkArrow } from "@/components/LinkArrow";
-import { about, founder } from "@/content/site";
+import { about } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,12 +13,10 @@ export const metadata: Metadata = {
     "Goshen Home Healthcare is a dedicated team of compassionate professionals delivering personalized home healthcare for all ages across Illinois.",
 };
 
-const blobB = { borderRadius: "58% 42% 45% 55% / 52% 56% 44% 48%" } as const;
-
 const differences = [
   {
     label: "Every age",
-    text: "From young children to seniors, care is shaped to the person in front of us — not a one-size plan.",
+    text: "From young children to seniors, care is shaped to the person in front of us.",
   },
   {
     label: "Around the clock",
@@ -29,8 +27,8 @@ const differences = [
     text: "Clinical nursing and everyday help from one trained team, so nothing falls through the cracks.",
   },
   {
-    label: "By the book",
-    text: "Every service is delivered within the Illinois State Nurse Practice Act, by caregivers trained to a high standard.",
+    label: "Licensed & compliant",
+    text: "Every service is delivered within the Illinois State Nurse Practice Act, by trained caregivers.",
   },
 ];
 
@@ -48,28 +46,26 @@ export default function AboutPage() {
         <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal>
             <div
-              style={blobB}
-              className="photo-warm aspect-square w-full overflow-hidden ring-1 ring-pine-900/6"
-            />
+              className="photo-warm relative aspect-square w-full overflow-hidden"
+              style={{ borderRadius: "58% 42% 45% 55% / 52% 56% 44% 48%" }}
+            >
+              <Image
+                src="/5.jpg"
+                alt="Goshen caregivers with clients at home"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </Reveal>
           <Reveal delay={100}>
-            <p className="eyebrow">Our company</p>
-            <h2 className="display-md mt-4">Who we are</h2>
-            <p className="mt-6 text-ink-700">
-              With a focus on{" "}
-              <strong>excellence, integrity, and compassion</strong>, we serve
-              individuals of all ages — making sure they get the support they
-              need to live safely and comfortably at home.
-            </p>
-            <p className="mt-4 text-ink-700">{about.body}</p>
-            <p className="mt-7 text-[0.95rem]">
-              <span className="font-semibold text-pine-900">
-                {founder.name}
-              </span>
-              <span className="text-ink-500">
-                {" "}
-                &nbsp;·&nbsp; {founder.role}
-              </span>
+            <p className="eyebrow">Who we are</p>
+            <h2 className="mt-4 font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight text-pine-900">
+              Care shaped around each person.
+            </h2>
+            <p className="mt-6 text-ink-700">{about.body}</p>
+            <p className="mt-4 border-l-2 border-blush-500 pl-4 text-ink-700">
+              {about.promise}
             </p>
           </Reveal>
         </Container>
@@ -80,7 +76,9 @@ export default function AboutPage() {
         <Container>
           <Reveal className="max-w-2xl">
             <p className="eyebrow">Why Goshen</p>
-            <h2 className="display-lg mt-4">What families notice.</h2>
+            <h2 className="mt-4 font-display text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight text-pine-900">
+              What families notice.
+            </h2>
           </Reveal>
           <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
             {differences.map((d, i) => (
@@ -94,24 +92,8 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
-        </Container>
-      </section>
-
-      {/* Founder promise */}
-      <section className="py-20 lg:py-24">
-        <Container className="max-w-3xl text-center">
-          <Reveal>
-            <p className="eyebrow">Our promise</p>
-            <p className="mission-quote mt-5 text-[clamp(1.4rem,2.6vw,2rem)]">
-              {founder.statement}
-            </p>
-            <p className="mt-6 text-[0.95rem] text-ink-500">
-              {founder.name} · {founder.role}
-            </p>
-            <Link
-              href="/contact"
-              className="editorial-link mt-8 justify-center"
-            >
+          <Reveal delay={120}>
+            <Link href="/contact" className="editorial-link mt-12">
               <span>Request a free assessment</span>
               <LinkArrow />
             </Link>

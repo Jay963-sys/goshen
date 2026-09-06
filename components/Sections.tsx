@@ -3,7 +3,7 @@ import { Button } from "./Button";
 import { Reveal } from "./Reveal";
 import { site } from "@/content/site";
 
-/** Closing CTA band — Goshen's real "free assessment" line. */
+/** Closing CTA band - Goshen's real "free assessment" line. */
 export function AssessmentBand() {
   return (
     <section className="relative mt-24">
@@ -16,7 +16,7 @@ export function AssessmentBand() {
             </h2>
             <p className="lede mx-auto mt-5 max-w-xl text-sage-200">
               Tell us about your family&apos;s needs and we&apos;ll build a care
-              plan around them — for any age, any time.
+              plan around them, for any age, any time.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href={site.primaryCta.href} size="lg" variant="onDark">

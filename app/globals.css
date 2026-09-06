@@ -1,31 +1,5 @@
 @import "tailwindcss";
 
-/* ============================================================
-   LotusCare design system
-   Shared, themeable layer. To rebrand for another site (e.g.
-   Goshen), override the palette + fonts in @theme and swap
-   content/site.ts — the components read only from tokens.
-   ============================================================ */
-
-/* ================================================================
-   GOSHEN THEME
-   Drop-in replacement for the @theme block in app/globals.css.
-   Same token NAMES as LotusCare — only the values change — so every
-   component retargets automatically. Keep the rest of globals.css
-   (base, editorial layer, utilities) exactly as-is.
-
-   Font swap: Goshen uses a modern grotesque for display instead of
-   the warm serif, to read as its own brand. In app/layout.tsx replace
-   the Fraunces import with Bricolage_Grotesque:
-
-     import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
-     const display = Bricolage_Grotesque({
-       subsets: ["latin"], variable: "--font-fraunces", display: "swap",
-     });
-   (Keep the CSS variable name --font-fraunces so nothing else needs editing,
-    or rename the token below to match.)
-   ================================================================ */
-
 @theme {
   /* Anchor: deep teal (Goshen's brand colour, made premium) */
   --color-pine-900: #0e3f3a;
