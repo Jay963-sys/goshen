@@ -95,3 +95,67 @@ Submissions are stored in `enquiries` and `applications`. Email notifications go
 Vercel is the natural fit (this doesn't need the client's current hosting). Add the
 env vars in the Vercel dashboard, connect the repo, and point the domain's DNS at
 the deployment at go-live.
+
+```
+goshen
+├─ app
+│  ├─ about
+│  │  └─ page.tsx
+│  ├─ api
+│  │  ├─ apply
+│  │  │  └─ route.ts
+│  │  └─ contact
+│  │     └─ route.ts
+│  ├─ apple-icon.png
+│  ├─ careers
+│  │  └─ page.tsx
+│  ├─ contact
+│  │  └─ page.tsx
+│  ├─ globals.css
+│  ├─ icon.png
+│  ├─ layout.tsx
+│  ├─ page.tsx
+│  └─ services
+│     └─ page.tsx
+├─ components
+│  ├─ ApplicationForm.tsx
+│  ├─ Button.tsx
+│  ├─ Cards.tsx
+│  ├─ ChatWidget.tsx
+│  ├─ ContactForm.tsx
+│  ├─ Container.tsx
+│  ├─ Field.tsx
+│  ├─ Footer.tsx
+│  ├─ Header.tsx
+│  ├─ LinkArrow.tsx
+│  ├─ LotusMark.tsx
+│  ├─ Reveal.tsx
+│  └─ Sections.tsx
+├─ content
+│  └─ site.ts
+├─ db
+│  ├─ index.ts
+│  └─ schema.ts
+├─ lib
+│  ├─ cn.ts
+│  └─ email.ts
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ 1.jpg
+│  ├─ 10.jpg
+│  ├─ 11.jpg
+│  ├─ 12.jpg
+│  ├─ 13.jpg
+│  ├─ 2.jpg
+│  ├─ 4.jpg
+│  ├─ 7.jpg
+│  ├─ 8.jpg
+│  ├─ 9.jpg
+│  └─ goshen-badge.png
+├─ README.md
+└─ tsconfig.json
+
+```

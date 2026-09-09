@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand */
-  --color-pine-900: #0e3f3a;
-  --color-pine-800: #124b45;
-  --color-pine-700: #1a6058;
-  --color-pine-600: #237a6f;
-  --color-pine-500: #328b7f;
+  /* Brand (Deep Navy replacing Pine) */
+  --color-pine-900: #082f49;
+  --color-pine-800: #0c4a6e;
+  --color-pine-700: #0369a1;
+  --color-pine-600: #0284c7;
+  --color-pine-500: #0ea5e9;
 
-  /* Soft supporting tones */
-  --color-sage-400: #6fb0a6;
-  --color-sage-200: #bfe0da;
-  --color-sage-100: #dceeea;
-  --color-sage-50: #edf6f4;
+  /* Soft supporting tones (Soft Sky replacing Sage) */
+  --color-sage-400: #7dd3fc;
+  --color-sage-200: #bae6fd;
+  --color-sage-100: #e0f2fe;
+  --color-sage-50: #f0f9ff;
 
-  /* Warm accent */
-  --color-blush-700: #a9493a;
-  --color-blush-600: #c25a48;
-  --color-blush-500: #d06b58;
-  --color-blush-200: #f0c6be;
-  --color-blush-100: #f8e4de;
+  /* Warm accent (Vibrant Royal Blue replacing Blush) */
+  --color-blush-700: #1d4ed8;
+  --color-blush-600: #2563eb;
+  --color-blush-500: #3b82f6;
+  --color-blush-200: #bfdbfe;
+  --color-blush-100: #dbeafe;
 
   /* Neutrals */
   --color-ivory: #f5f8f6;
