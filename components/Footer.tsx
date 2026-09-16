@@ -20,11 +20,11 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <Image
-                src="/goshen-badge.png"
+                src="/goshen-logo.png"
                 alt={site.legalName}
-                width={144}
-                height={145}
-                className="h-14 w-14"
+                width={512}
+                height={512}
+                className="h-16 w-16"
               />
               <span className="flex flex-col leading-none">
                 <span className="font-display text-[1.3rem] font-bold text-white">

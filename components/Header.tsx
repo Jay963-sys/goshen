@@ -26,14 +26,16 @@ function Brand({ onClick }: { onClick?: () => void }) {
       aria-label={`${site.legalName} home`}
       onClick={onClick}
     >
-      <Image
-        src="/goshen-badge.png"
-        alt=""
-        width={144}
-        height={145}
-        priority
-        className="h-11 w-11"
-      />
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink">
+        <Image
+          src="/goshen-logo.png"
+          alt=""
+          width={512}
+          height={512}
+          priority
+          className="h-11 w-11"
+        />
+      </span>
       <span className="flex flex-col leading-none">
         <span className="font-display text-[1.2rem] font-bold tracking-tight text-pine-900">
           Goshen
