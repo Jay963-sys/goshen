@@ -123,6 +123,15 @@ export function ApplicationForm({ siteName }: { siteName: string }) {
       onSubmit={handleSubmit}
       className="space-y-10 rounded-[2rem] bg-white p-8 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.15)] ring-1 ring-pine-900/10 sm:p-12"
     >
+      <div className="border-b border-pine-900/10 pb-8">
+        <p className="eyebrow text-pine-700">Careers with {siteName}</p>
+        <h2 className="display-sm mt-2 text-pine-900">Apply now</h2>
+        <p className="lede mt-3 max-w-xl text-ink-600">
+          Fill out the form below and we&apos;ll be in touch. Fields marked required
+          help us match you to the right role faster.
+        </p>
+      </div>
+
       <div className="grid gap-6 sm:grid-cols-2">
         <Field label="Full Name" htmlFor="fullName">
           <input
