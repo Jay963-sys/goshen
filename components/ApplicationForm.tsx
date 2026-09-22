@@ -236,11 +236,11 @@ export function ApplicationForm({ siteName }: { siteName: string }) {
         </div>
       </fieldset>
 
-      <fieldset>
+      <fieldset className="min-w-0">
         <legend className="text-sm font-semibold text-pine-900">
           Which days of the week are you available to work? (select all that apply)
         </legend>
-        <div className="mt-4 overflow-x-auto">
+        <div className="mt-4 w-full min-w-0 overflow-x-auto">
           <table className="w-full min-w-[420px] border-collapse text-sm">
             <thead>
               <tr>
