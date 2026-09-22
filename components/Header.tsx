@@ -14,7 +14,7 @@ const nav = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 /** Goshen brand lockup: circular badge + wordmark. */
