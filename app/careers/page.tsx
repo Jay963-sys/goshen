@@ -70,21 +70,29 @@ export default function CareersPage() {
         </Container>
       </section>
 
-      {/* Apply */}
-      <section className="bg-cream py-20">
-        <Container className="max-w-2xl">
+      {/* Primary apply CTA → client's Google application form */}
+      <section className="py-16 lg:py-20">
+        <Container className="max-w-3xl">
           <Reveal>
-            <p className="eyebrow">Apply now</p>
-            <h2 className="mt-3 font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight text-pine-900">
-              Tell us about yourself.
-            </h2>
-            <p className="mt-4 text-ink-700">
-              Complete the form below and our team will be in touch if
-              there&apos;s a fit. Every application is read by a real person.
-            </p>
-          </Reveal>
-          <Reveal delay={120} className="mt-10">
-            <ApplicationForm />
+            <div className="relative overflow-hidden rounded-[2rem] bg-pine-800 px-8 py-12 text-center text-white sm:px-12">
+              <p className="eyebrow text-blush-200">
+                Careers with Goshen Home Healthcare
+              </p>
+              <h2 className="display-md mt-4 text-white">Apply now.</h2>
+              <p className="lede mx-auto mt-4 max-w-xl text-sage-200">
+                We're always hiring nurses and caregivers. Fill out our quick
+                application and we'll be in touch.
+              </p>
+              <a
+                href={careerLinks.applyForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-base font-semibold text-pine-900 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.5)] transition-all hover:-translate-y-0.5 hover:bg-cream"
+              >
+                Apply here
+                <LinkArrow />
+              </a>
+            </div>
           </Reveal>
         </Container>
       </section>

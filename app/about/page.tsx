@@ -28,7 +28,7 @@ const differences = [
   },
   {
     label: "Licensed & compliant",
-    text: "Every service is delivered within the Illinois State Nurse Practice Act, by trained caregivers.",
+    text: "Every service is delivered by trained caregivers in accordance with applicable Illinois Department of Public Health (IDPH) guidelines, ensuring safe, professional, and dependable care.",
   },
 ];
 

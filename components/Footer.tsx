@@ -36,8 +36,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-5 max-w-xs text-[0.95rem] leading-relaxed text-sage-200/85">
-              {site.tagline} Compassionate home healthcare for every age, across
-              Illinois.
+              Compassionate home healthcare for every age, across Illinois.
             </p>
 
             {socials.length > 0 && (

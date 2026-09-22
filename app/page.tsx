@@ -19,7 +19,7 @@ const trust = [
   {
     n: "03",
     title: "Licensed & compliant",
-    text: "Care delivered within the requirements of the Illinois State Nurse Practice Act.",
+    text: "Every service is delivered by trained caregivers in accordance with applicable Illinois Department of Public Health (IDPH) guidelines, ensuring safe, professional, and dependable care.",
   },
 ];
 

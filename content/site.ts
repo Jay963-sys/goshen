@@ -46,6 +46,27 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "home-making",
+    title: "Home Making Services",
+    group: "Personal Care",
+    blurb:
+      "Meals, light housekeeping and errands that keep the home safe, clean and comfortable.",
+  },
+  {
+    slug: "companionship",
+    title: "Companionship / Sitter Services",
+    group: "Personal Care",
+    blurb:
+      "A friendly, dependable presence: company, conversation, and a watchful eye when family can't be there.",
+  },
+  {
+    slug: "personal-care",
+    title: "Personal Care Services",
+    group: "Personal Care",
+    blurb:
+      "Respectful help with bathing, dressing, grooming and mobility: daily support with dignity.",
+  },
+  {
     slug: "private-duty-nursing",
     title: "Private Duty Nursing",
     group: "Skilled Nursing",
@@ -80,27 +101,6 @@ export const services: Service[] = [
     blurb:
       "In-home IV and infusion care, administered and monitored by skilled nurses.",
   },
-  {
-    slug: "personal-care",
-    title: "Personal Care Services",
-    group: "Personal Care",
-    blurb:
-      "Respectful help with bathing, dressing, grooming and mobility: daily support with dignity.",
-  },
-  {
-    slug: "home-making",
-    title: "Home Making Services",
-    group: "Personal Care",
-    blurb:
-      "Meals, light housekeeping and errands that keep the home safe, clean and comfortable.",
-  },
-  {
-    slug: "companionship",
-    title: "Companionship / Sitter Services",
-    group: "Personal Care",
-    blurb:
-      "A friendly, dependable presence: company, conversation, and a watchful eye when family can't be there.",
-  },
 ];
 
 export const serviceNote =
@@ -126,7 +126,11 @@ export const careerTracks = [
   },
 ] as const;
 
-export const careerLinks = { indeed: "", linkedin: "" } as const;
+export const careerLinks = {
+  indeed: "",
+  linkedin: "",
+  applyForm: "https://forms.gle/zZBqC86MU8vXU99H9",
+} as const;
 
 export const positionOptions = careerTracks.map((t) => t.title);
 export const employmentTypes = ["Full-time", "Part-time", "Per diem"] as const;
