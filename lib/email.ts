@@ -41,12 +41,16 @@ export async function sendLeadEmail(
     );
     return { sent: false };
   }
-  await resend.emails.send({
-    from: FROM,
-    to: INBOX,
-    subject: title,
-    html: toHtml(title, fields),
-    replyTo,
-  });
-  return { sent: true };
+  const { error } = await resend.emails.send({
+  from: FROM,
+  to: INBOX,
+  subject: title,
+  html: toHtml(title, fields),
+  replyTo,
+});
+if (error) {
+  console.error("[email] Resend error:", error);
+  throw new Error(error.message);
+}
+return { sent: true };
 }
